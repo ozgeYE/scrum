@@ -1,12 +1,15 @@
+import axios from 'axios';
+
 export const GET_STORYS = "GET_STORYS";
 export const GET_STORY = "GET_STORY";
 export const ADD_STORY = "ADD_STORY";
 export const DELETE_STORY = "REMOVE_STORY";
 export const UPDATE_STORY = "UPDATE_STORY";
 
-export const getStorys = () => {
+export const getStories = () => {
     return {
-        type: GET_STORYS
+        type: GET_STORYS,
+        stories: axios.get('http://localhost:3001/user')
     }
 };
 

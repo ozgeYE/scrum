@@ -1,25 +1,22 @@
 import React from 'react';
+import {Row, Col} from 'react-bootstrap';
 import StoryTable from "./StoryTable";
 import StoryPoint from "./StoryPoint";
-import {Row, Col} from 'react-bootstrap';
-import MasterPanel from "./MasterPanel";
 
-class ScrumMaster extends React.Component{
+class DeveloperScreen extends React.Component {
     render() {
         return (
             <Row className="scrum-master-container">
-                <Col xs="6">
+                <Col xs="8">
                     <StoryTable/>
                 </Col>
-                <Col xs="3">
+                <Col xs="4">
                     <StoryPoint/>
                 </Col>
-                <Col xs="3">
-                    <MasterPanel/>
-                </Col>
             </Row>
+
         )
     }
 }
 
-export default ScrumMaster;
+export default DeveloperScreen;

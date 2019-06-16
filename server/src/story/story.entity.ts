@@ -13,4 +13,7 @@ export class StoryEntity {
 
     @Column({default: 0})
     status: boolean;
+
+    @Column({default: 0})
+    storyPoint: number;
 }

@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
 import StoryList from "./components/StoryList";
 import ScrumMaster from "./components/ScrumMaster";
+import DeveloperScreen from "./components/DeveloperScreen";
 
 class App extends React.Component {
     render() {
@@ -21,23 +22,13 @@ class App extends React.Component {
                 <Container>
                     <div>App</div>
                     <Button onClick={() => this.props.addUser()}>Add User</Button>
+                    <Route exact path="/" component={StoryList}/>
                     <Route path="/story-list" component={StoryList}/>
                     <Route path="/scrum-master" component={ScrumMaster}/>
+                    <Route path="/developer-screen" component={DeveloperScreen}/>
                 </Container>
             </BrowserRouter>
         )
-
-        // return (
-        //     <Container className="App">
-        //         <div>
-        //             <Row>
-        //                 App
-        //                 <Button onClick={() => this.props.addUser()}>Add User</Button>
-        //             </Row>
-        //
-        //         </div>
-        //     </Container>
-        // )
     }
 }
 

@@ -5,8 +5,11 @@ import {
 } from "../actions/storyAction";
 
 
-const storyReducer = (state = {storys: []}, action) => {
+const storyReducer = (state = {stories: []}, action) => {
     switch (action.type) {
+        case GET_STORYS:
+            console.log(action);
+            return Object.assign({}, state, {stories: action.stories});
         case ADD_STORY:
             console.log(action);
             return state;
@@ -14,11 +17,6 @@ const storyReducer = (state = {storys: []}, action) => {
             const filteredLinks = state.storys.filter(l => l.id !== action.storyId);
             console.log(filteredLinks);
             return Object.assign({}, state, {storys: filteredLinks});
-        case GET_STORYS:
-            const currentPage= action.currentPage;
-            const sliceLink= state.storys.splice((currentPage-1)*5, 4);
-            console.log(sliceLink);
-            return Object.assign({}, state, {storys: sliceLink});
 
         default:
             return state;
